@@ -1,0 +1,30 @@
+﻿@model DentalClinic.Models.Cliente
+
+@{
+    ViewData["Title"] = "Eliminar cliente";
+}
+
+<h2 class="mb-3 text-danger">Eliminar cliente</h2>
+
+<div class="alert alert-warning">
+    ¿Estás seguro que deseas eliminar este cliente?
+</div>
+
+<div class="mb-3">
+    <dl class="row">
+        <dt class="col-sm-2">Nombre</dt>
+        <dd class="col-sm-10">@Model.Nombre</dd>
+
+        <dt class="col-sm-2">Email</dt>
+        <dd class="col-sm-10">@Model.Email</dd>
+
+        <dt class="col-sm-2">Teléfono</dt>
+        <dd class="col-sm-10">@Model.Telefono</dd>
+    </dl>
+</div>
+
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger">Eliminar</button>
+    <a asp-action="Index" class="btn btn-secondary ms-2">Cancelar</a>
+</form>

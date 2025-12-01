@@ -1,0 +1,21 @@
+﻿@model DentalClinic.Models.Servicio
+
+@{
+    ViewData["Title"] = "Detalle de Servicio";
+}
+
+<h2 class="mb-3">Detalle de Servicio</h2>
+
+<dl class="row">
+    <dt class="col-sm-2">Nombre</dt>
+    <dd class="col-sm-10">@Model.Nombre</dd>
+
+    <dt class="col-sm-2">Descripción</dt>
+    <dd class="col-sm-10">@Model.Descripcion</dd>
+
+    <dt class="col-sm-2">Costo</dt>
+    <dd class="col-sm-10">@Model.CostoBase.ToString("C")</dd>
+</dl>
+
+<a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning">Editar</a>
+<a asp-action="Index" class="btn btn-secondary ms-2">Volver</a>
