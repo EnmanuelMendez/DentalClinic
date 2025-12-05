@@ -1,15 +1,21 @@
 using DentalClinic.Data;
+using DentalClinic.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-
+builder.Services.AddControllers();
 builder.Services.AddDbContext<DentalClinicContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+builder.Services.AddTransient<IServicioEmail, ServicioEmail>();
+
 var app = builder.Build();
+
+app.MapControllers();            // NECESARIO PARA /api/*
+app.MapDefaultControllerRoute();
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
