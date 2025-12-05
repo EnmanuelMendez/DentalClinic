@@ -1,146 +1,132 @@
-﻿<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - DentalClinic</title>
 
-    <!-- HOME -->
-    <li class="nav-item">
-        <a class="nav-link" asp-controller="Home" asp-action="Index">Inicio</a>
-    </li>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/DentalClinic.styles.css" asp-append-version="true" />
+</head>
+<body>
 
-    <!-- CLIENTES -->
-    <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" role="button"
-           data-bs-toggle="dropdown">
-            Clientes
-        </a>
-        <ul class="dropdown-menu">
+    <!-- NAVBAR -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container-fluid">
 
-            <li>
-                <a class="dropdown-item" asp-controller="Cliente" asp-action="Create">
-                    Crear cliente
-                </a>
-            </li>
+                <a class="navbar-brand" asp-controller="Home" asp-action="Index">DentalClinic</a>
 
-            <li>
-                <a class="dropdown-item" asp-controller="Cliente" asp-action="Index">
-                    Listar clientes
-                </a>
-            </li>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#mainNavbar" aria-controls="mainNavbar"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-            <li>
-                <a class="dropdown-item" asp-controller="Reserva" asp-action="Buscar">
-                    Buscar mis reservas
-                </a>
-            </li>
+                <div class="collapse navbar-collapse" id="mainNavbar">
 
-        </ul>
-    </li>
+                    <!-- MENU -->
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
-    <!-- SERVICIOS -->
-    <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" role="button"
-           data-bs-toggle="dropdown">
-            Servicios
-        </a>
-        <ul class="dropdown-menu">
+                        <!-- HOME -->
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Home" asp-action="Index">Inicio</a>
+                        </li>
 
-            <li>
-                <a class="dropdown-item" asp-controller="Servicio" asp-action="Create">
-                    Crear servicio
-                </a>
-            </li>
+                        <!-- CLIENTES -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                                Clientes
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" asp-controller="Cliente" asp-action="Create">Crear cliente</a></li>
+                                <li><a class="dropdown-item" asp-controller="Cliente" asp-action="Index">Listar clientes</a></li>
+                                <li><a class="dropdown-item" asp-controller="Reserva" asp-action="Buscar">Buscar mis reservas</a></li>
+                            </ul>
+                        </li>
 
-            <li>
-                <a class="dropdown-item" asp-controller="Servicio" asp-action="Index">
-                    Listar servicios
-                </a>
-            </li>
+                        <!-- SERVICIOS -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                                Servicios
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" asp-controller="Servicio" asp-action="Create">Crear servicio</a></li>
+                                <li><a class="dropdown-item" asp-controller="Servicio" asp-action="Index">Listar servicios</a></li>
+                            </ul>
+                        </li>
 
-        </ul>
-    </li>
+                        <!-- ITEMS DE SERVICIO -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                                Items de Servicio
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" asp-controller="ItemServicio" asp-action="Create">Crear item</a></li>
+                                <li><a class="dropdown-item" asp-controller="ItemServicio" asp-action="Index">Listar items</a></li>
+                            </ul>
+                        </li>
 
-    <!-- ITEMS DE SERVICIO -->
-    <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" role="button"
-           data-bs-toggle="dropdown">
-            Items de Servicio
-        </a>
-        <ul class="dropdown-menu">
+                        <!-- HORARIOS -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                                Horarios
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" asp-controller="HorarioAtencion" asp-action="Create">Crear horario</a></li>
+                                <li><a class="dropdown-item" asp-controller="HorarioAtencion" asp-action="Index">Listar horarios</a></li>
+                            </ul>
+                        </li>
 
-            <li>
-                <a class="dropdown-item" asp-controller="ItemServicio" asp-action="Create">
-                    Crear item de servicio
-                </a>
-            </li>
+                        <!-- CONFIGURACIÓN EMPRESA -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                                Configuración
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" asp-controller="ConfiguracionEmpresa" asp-action="Create">Nueva configuración</a></li>
+                                <li><a class="dropdown-item" asp-controller="ConfiguracionEmpresa" asp-action="Index">Ver configuraciones</a></li>
+                            </ul>
+                        </li>
 
-            <li>
-                <a class="dropdown-item" asp-controller="ItemServicio" asp-action="Index">
-                    Listar items
-                </a>
-            </li>
+                        <!-- BACKOFFICE -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-danger fw-bold" href="#" role="button" data-bs-toggle="dropdown">
+                                Backoffice
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item text-danger" asp-controller="AdminReserva" asp-action="Index">Panel de reservas</a></li>
+                            </ul>
+                        </li>
 
-        </ul>
-    </li>
+                    </ul>
+                </div>
 
-    <!-- HORARIOS -->
-    <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" role="button"
-           data-bs-toggle="dropdown">
-            Horarios
-        </a>
-        <ul class="dropdown-menu">
+            </div>
+        </nav>
+    </header>
 
-            <li>
-                <a class="dropdown-item" asp-controller="HorarioAtencion" asp-action="Create">
-                    Crear horario
-                </a>
-            </li>
+    <!-- CONTENIDO PRINCIPAL -->
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
 
-            <li>
-                <a class="dropdown-item" asp-controller="HorarioAtencion" asp-action="Index">
-                    Listar horarios
-                </a>
-            </li>
+    <!-- FOOTER -->
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2025 - DentalClinic - <a asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
 
-        </ul>
-    </li>
+    <!-- SCRIPTS -->
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
 
-    <!-- CONFIGURACIÓN EMPRESA -->
-    <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" role="button"
-           data-bs-toggle="dropdown">
-            Configuración
-        </a>
-        <ul class="dropdown-menu">
+    @RenderSection("Scripts", required: false)
 
-            <li>
-                <a class="dropdown-item" asp-controller="ConfiguracionEmpresa" asp-action="Create">
-                    Crear configuración
-                </a>
-            </li>
-
-            <li>
-                <a class="dropdown-item" asp-controller="ConfiguracionEmpresa" asp-action="Index">
-                    Ver configuraciones
-                </a>
-            </li>
-
-        </ul>
-    </li>
-
-    <!-- BACKOFFICE -->
-    <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle text-danger fw-bold" href="#" role="button"
-           data-bs-toggle="dropdown">
-            Backoffice
-        </a>
-        <ul class="dropdown-menu">
-
-            <li>
-                <a class="dropdown-item text-danger" asp-controller="AdminReserva" asp-action="Index">
-                    Panel de reservas
-                </a>
-            </li>
-
-        </ul>
-    </li>
-
-</ul>
+</body>
+</html>
