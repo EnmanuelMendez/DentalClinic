@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DentalClinic.Controllers
 {
-    public class AdminReservaController : Controller
+    public class AdminReservaController : Controller 
     {
         private readonly DentalClinicContext _context;
 
